@@ -1,14 +1,13 @@
 # Sudoku
-Python sudoku, using pygames
+A simple python sudoku game with 1 board created using pygames
 run GUI.py to play the game.
+run solver.py to check answers
 
 # How to play Sudoku?
 Sudoku is played on a grid of 9 x 9 spaces. Within the rows and columns are 9 “squares” (made up of 3 x 3 spaces). Each row, column and square (9 spaces each) needs to be filled out with the numbers 1-9, without repeating any numbers within the row, column or square.
 
 https://sudoku.com/how-to-play/sudoku-rules-for-complete-beginners/#:~:text=Sudoku%20is%20played%20on%20a,the%20row%2C%20column%20or%20square.
 
-# How to win?
-complete the sudoku to win, there is a extra file called solver.py to work out the sudoku to let you check your answers.
 
 # Strikes
 If you get to 5 strikes the game ends.
