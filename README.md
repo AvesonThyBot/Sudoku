@@ -7,4 +7,9 @@ Sudoku is played on a grid of 9 x 9 spaces. Within the rows and columns are 9 â€
 
 https://sudoku.com/how-to-play/sudoku-rules-for-complete-beginners/#:~:text=Sudoku%20is%20played%20on%20a,the%20row%2C%20column%20or%20square.
 
+# How to win?
+complete the sudoku to win, there is a extra file called solver.py to work out the sudoku to let you check your answers.
+
+# Strikes
+If you get to 5 strikes the game ends.
 
