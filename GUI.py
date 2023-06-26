@@ -275,9 +275,7 @@ def main():
     start = time.time()
     strikes = 0
     while run:
-
         play_time = round(time.time() - start)
-
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -350,6 +348,11 @@ def main():
 
         redraw_window(win, board, play_time, strikes)
         pygame.display.update()
+
+        if strikes == 5:
+            print("Game over")
+            run = False
+
 
 
 main()
