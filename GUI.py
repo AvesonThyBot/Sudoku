@@ -234,13 +234,21 @@ def valid(bo, num, pos):
 
 def redraw_window(win, board, time, strikes):
     win.fill((255,255,255))
+    window_width, window_height = win.get_size()
+
     # Draw time
     fnt = pygame.font.SysFont("comicsans", 40)
-    text = fnt.render("Time: " + format_time(time), 1, (0,0,0))
-    win.blit(text, (540 - 160, 560))
+    timer_text = fnt.render("Time: " + format_time(time), 1, (0,0,0))
+    timer_x = window_width - timer_text.get_width() - 20
+    timer_y = window_height - timer_text.get_height() - 5
+    win.blit(timer_text, (timer_x, timer_y))
+
     # Draw Strikes
-    text = fnt.render("X " * strikes, 1, (255, 0, 0))
-    win.blit(text, (20, 560))
+    strikes_text = fnt.render("X " * strikes, 1, (255, 0, 0))
+    strikes_x = 20
+    strikes_y = window_height - strikes_text.get_height() - 5
+    win.blit(strikes_text, (strikes_x, strikes_y))
+
     # Draw grid and board
     board.draw()
 
@@ -255,9 +263,13 @@ def format_time(secs):
 
 
 def main():
-    win = pygame.display.set_mode((540,600))
+    WIDTH = 600
+    HEIGHT = 660
+    GRID_SIZE = 9
+
+    win = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
     pygame.display.set_caption("Sudoku")
-    board = Grid(9, 9, 540, 540, win)
+    board = Grid(GRID_SIZE, GRID_SIZE, WIDTH, WIDTH, win)
     key = None
     run = True
     start = time.time()
